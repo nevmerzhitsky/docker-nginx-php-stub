@@ -1,0 +1,14 @@
+# From http://geekyplatypus.com/dockerise-your-php-application-with-nginx-and-php7-fpm/
+version: "3.3"
+
+services:
+  web:
+    build:
+      context: web/.
+    ports:
+      - "80:80"
+    depends_on:
+      - fpm
+  fpm:
+    build:
+      context: fpm/.
